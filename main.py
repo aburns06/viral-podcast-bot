@@ -1,27 +1,20 @@
 from flask import Flask, request, jsonify
-import random
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Viral Podcast Bot is Live!"
-
 @app.route('/process', methods=['POST'])
-def process_video():
+def process():
     data = request.get_json()
-    video_url = data.get("video_url")
+    video_url = data.get('video_url')
 
     if not video_url:
-        return jsonify({"error": "No video URL provided"}), 400
+        return jsonify({'error': 'No video URL provided'}), 400
 
-    # This is placeholder logic — simulate success for now
-    fake_clip_url = f"https://viral-podcast-bot.onrender.com/videos/fake_clip_{random.randint(1000,9999)}.mp4"
-    caption = "🔥 Viral podcast clip of the day! #podcast #motivation #reels"
-
+    # This is just for testing. Replace with real processing logic.
     return jsonify({
-        "video_url": fake_clip_url,
-        "caption": caption
+        'status': 'success',
+        'video_url_received': video_url,
+        'caption': 'Sample viral caption for Instagram'
     })
 
 if __name__ == '__main__':
