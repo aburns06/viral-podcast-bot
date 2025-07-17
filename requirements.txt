@@ -2,4 +2,6 @@ flask
 yt-dlp
 faster-whisper
 openai
+moviepy
+gunicorn
 ffmpeg-python
