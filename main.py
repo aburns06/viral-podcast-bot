@@ -32,7 +32,8 @@ def process():
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
-            'cookiefile': 'www.youtube.com_cookies.txt',
+            'cookiefile': 'youtube_cookies.txt',
+
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
